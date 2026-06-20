@@ -1,32 +1,30 @@
-Kiro Agentic RAG 🤖
-פרויקט זה הוא מערכת Agentic RAG (Retrieval-Augmented Generation) מתקדמת, המבוססת על LlamaIndex ו-Workflows. המערכת מאפשרת למשתמש לשאול שאלות על מסמכי הפרויקט ולקבל תשובות חכמות המבוססות על שליפה ממאגר וקטורי, תוך שילוב כלים חיצוניים וזיכרון שיחה.
+Kiro Agentic RAG Project 🤖
+פרויקט מבוסס AI המשלב RAG (Retrieval-Augmented Generation) יחד עם Agentic Workflow כדי לספק תשובות מדויקות, מבוססות ידע ארגוני, עם יכולת הפעלת כלים בזמן אמת.
 
-🛠 טכנולוגיות
-Framework: LlamaIndex (Workflows, Agents, Memory)
+🚀 אודות הפרויקט
+פרויקט Kiro נועד לסייע למשתמשים לקבל מידע על הפרויקט מתוך מסמכים טכניים, תוך שילוב כלים חיצוניים לחישובים מתמטיים ודיווח זמן מדויק. הפרויקט משתמש בטכנולוגיית ה-Workflow העדכנית ביותר של LlamaIndex.
 
-LLM: Cohere (Command R+)
+🛠 טכנולוגיות מרכזיות
+Framework: LlamaIndex (Workflows & ReAct Agents).
 
-Vector Database: Pinecone
+LLM & Embeddings: Cohere (Command R+ & Embed v3).
 
-UI: Gradio
+Vector Database: Pinecone.
 
-Language: Python
+Interface: Gradio.
 
-🚀 תכונות המערכת
-RAG (Retrieval-Augmented Generation): שליפת מידע רלוונטי ממסמכי הפרויקט המאוחסנים ב-Pinecone.
+✨ מאפיינים עיקריים
+Agentic RAG: שליפה חכמה של מידע מהמסמכים ב-Pinecone.
 
-Agentic Capabilities: שימוש ב-FunctionTool המאפשר למערכת לבצע פעולות (כמו קבלת זמן נוכחי) באופן עצמאי.
+Tool Use: יכולת אוטונומית להפעיל כלים (מחשבון ושעון UTC).
 
-Event-Driven Workflow: שימוש ב-Workflow של LlamaIndex לניהול זרימת השלבים (Validation -> Retrieval -> Generation).
+Memory Management: ניהול זיכרון שיחה מובנה באמצעות ChatMemoryBuffer.
 
-Conversation Memory: שימוש ב-ChatMemoryBuffer לשמירת הקשר השיחה.
-אופן פעולת ה-Agentic Workflow:
-המערכת שלי משתמשת ב-Workflow של LlamaIndex כדי להפריד בין תחומי אחריות:
-
-עיבוד קלט (Input Validation): סינון ומניעת קלט ריק.
-
-Retrieval (RAG): שליפה סמנטית של מידע רלוונטי מתוך בסיס הנתונים הוקטורי (Pinecone).
-
-Reasoning (Agentic): המערכת מחליטה האם להשתמש במידע שהתקבל מה-RAG או להפעיל FunctionTool (כמו כלי הזמן) בהתאם לצורך.
-
-זיכרון (Memory): ניהול היסטוריית שיחה באמצעות ChatMemoryBuffer, המאפשר למודל להבין את ההקשר של שאלות המשך (Follow-up questions).
+Clean Workflow: ארכיטקטורה מודולרית המפרידה בין אימות קלט, שליפה, וסינתזה.
+ENV
+COHERE_API_KEY=your_key_here
+PINECONE_API_KEY=your_key_here
+התקנות
+pip install llama-index llama-index-llms-cohere llama-index-embeddings-cohere llama-index-vector-stores-pinecone gradio pinecone-client python-dotenv
+הרצת הפרויקט
+python agent.py
